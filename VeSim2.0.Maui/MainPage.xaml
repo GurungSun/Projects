@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VeSim2._0.Maui.MainPage"
+             xmlns:vm ="clr-namespace:VeSim2._0.Maui.ViewModels"
+             xmlns:mod ="clr-namespace:VeSim2._0.Maui.Models"
+             Title="Auto Trader"
+             BackgroundColor="#181a18">
+
+    <ContentPage.BindingContext>
+        <vm:MVM />
+    </ContentPage.BindingContext>
+
+    <CollectionView ItemsSource="{Binding Vehicles}" Margin="16" >
+        <CollectionView.Header>
+            <Label Text="Collection of Vehicles" FontSize="Header" />
+        </CollectionView.Header>
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical" ItemSpacing="16" />
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="mod:Vehicle">
+                
+                <Border MinimumHeightRequest="0" MinimumWidthRequest="50" BackgroundColor="#0c0d0c" Grid.Row="1">
+                    <Grid RowDefinitions="auto,auto">
+
+                        <Image Grid.ColumnSpan="2" Grid.Row="0" Source="{Binding ImageUrl}" 
+                           Aspect="AspectFill" 
+                           MaximumHeightRequest="500" 
+                           MaximumWidthRequest="1000" 
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Center" 
+                           Margin="0,0,0,0"/>
+
+                        <Grid ColumnDefinitions="auto,auto,*" Grid.Row="1" BackgroundColor="#181a18">
+                            <Label Grid.Column="0" Text="{Binding Make}" 
+                               Margin="2,8,2,8"
+                               FontSize="Medium"/>
+                            <Label Grid.Column="1"  Text="{Binding Model}" 
+                               Margin="10,8,10,8"
+                               FontSize="Medium"/>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+    
+
+</ContentPage>

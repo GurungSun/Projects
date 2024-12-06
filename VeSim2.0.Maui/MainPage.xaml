@@ -13,7 +13,7 @@
 
     <CollectionView ItemsSource="{Binding Vehicles}" Margin="16" >
         <CollectionView.Header>
-            <Label Text="Collection of Vehicles" FontSize="Header" />
+            <Label Text="Collection of Vehicles" FontSize="Header" HorizontalTextAlignment="Center"/>
         </CollectionView.Header>
         <CollectionView.ItemsLayout>
             <LinearItemsLayout Orientation="Vertical" ItemSpacing="16" />
@@ -22,7 +22,7 @@
             <DataTemplate x:DataType="mod:Vehicle">
                 
                 <Border MinimumHeightRequest="0" MinimumWidthRequest="50" BackgroundColor="#0c0d0c" Grid.Row="1">
-                    <Grid RowDefinitions="auto,auto">
+                    <Grid RowDefinitions="auto,auto,auto">
 
                         <Image Grid.ColumnSpan="2" Grid.Row="0" Source="{Binding ImageUrl}" 
                            Aspect="AspectFill" 
@@ -39,6 +39,38 @@
                             <Label Grid.Column="1"  Text="{Binding Model}" 
                                Margin="10,8,10,8"
                                FontSize="Medium"/>
+                        </Grid>
+
+                        <Grid Grid.Row="2">
+                            <Grid ColumnDefinitions="auto,auto,auto,*" BackgroundColor="#181a18">
+                                <Button Grid.Column="0" 
+                                        Margin="2,2,2,2" 
+                                        Text="Add" 
+                                        BackgroundColor="#0c0d0c" 
+                                        TextColor="White"
+                                        >
+
+                                </Button>
+                                <Button 
+                                    Grid.Column="1" 
+                                    Margin="2,2,2,2" 
+                                    Text="Remove" 
+                                    BackgroundColor="#0c0d0c" 
+                                    TextColor="White">
+                                    
+                                </Button>
+                                <Button 
+                                    Grid.Column="2" 
+                                    Margin="2,2,2,2" 
+                                    Text="Edit" 
+                                    BackgroundColor="#0c0d0c" 
+                                    TextColor="White">
+                                    
+                                </Button>
+                                    
+                                    
+                                
+                            </Grid>
                         </Grid>
                     </Grid>
                 </Border>

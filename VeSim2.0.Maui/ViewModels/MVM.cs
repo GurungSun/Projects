@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using VeSim2._0.Maui.Models;
 
 namespace VeSim2._0.Maui.ViewModels
@@ -25,21 +26,24 @@ namespace VeSim2._0.Maui.ViewModels
             AddSampleData();
 
             
+            
         }
         
+
+        [RelayCommand]
         public void AddVehicle(string make, string model, string imgurl)
         {
             Vehicle vehicle = new Vehicle(make, model, imgurl);
-            vehicles.Add(vehicle);
+            Vehicles.Add(vehicle);
 
         }
-        
+        [RelayCommand]
         public void RemoveVehicle(string make, string model, string imgurl)
         {
-            Vehicle? vehicle = vehicles.FirstOrDefault(i => i.Make == make && i.Model == model);
+            Vehicle? vehicle = Vehicles.FirstOrDefault(i => i.Make == make && i.Model == model);
             if (vehicle != null)
             {
-                vehicles.Remove(vehicle);
+                Vehicles.Remove(vehicle);
             }
             else
             {

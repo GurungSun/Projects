@@ -22,7 +22,7 @@
                     BackgroundColor="#0c0d0c" 
                     TextColor="White"
                     x:Name="addButton"
-                    Command="{Binding}"/>
+                    Command="{Binding AddVehicleCommand}"/>
 
 
                 <Button 

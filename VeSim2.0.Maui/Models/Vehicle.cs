@@ -7,26 +7,22 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace VeSim2._0.Maui.Models
 {
-    public partial class Vehicle : ObservableObject
+    public partial class Vehicle : VehicleD
     {
-        [ObservableProperty]
         private Guid id;
 
-        [ObservableProperty]
-        private string make;
+        public Guid Id
+        {
+            get { return id; }
+            set { id = value; NotifyPropertyChanged(); }
 
-        [ObservableProperty]
-        private string model;
-
-        [ObservableProperty]
-        private string imageUrl;
-
-        public Vehicle(string make, string model, string imgurl)
+        }
+        public Vehicle(string make, string model, string imgUrl) : base(make, model, imgUrl) //needs to inherit back to the base class
         {
             this.Id = Guid.NewGuid();
             this.Make = make;
             this.Model = model;
-            this.ImageUrl = imgurl;
+            this.ImageUrl = imgUrl;
         }
     }
 }

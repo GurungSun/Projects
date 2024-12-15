@@ -28,7 +28,13 @@ namespace VeSim2._0.Maui.ViewModels
             
             
         }
+        [RelayCommand]
+        public void ViewAdd(VehicleD vehicleD)
+        {
+            
+            Vehicles.Add(new Vehicle("Toyota","Camry", "https://hips.hearstapps.com/hmg-prod/images/2005072-03-camry-se-1579105800.jpg"));
 
+        }
 
         [RelayCommand]
         public void AddVehicle(VehicleD vehicleD)

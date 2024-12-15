@@ -14,7 +14,7 @@
     <CollectionView ItemsSource="{Binding Vehicles}" Margin="16" >
         <CollectionView.Header>
             <Grid ColumnDefinitions="auto,*,auto,auto,auto">
-                <Label Grid.Column="0" Text="title" FontSize="Header"/>
+                <Label Grid.Column="0" Text="List of Vehicles" FontSize="Header"/>
                 <Button 
                     Grid.Column="2" 
                     Margin="2,2,2,2" 
@@ -22,7 +22,7 @@
                     BackgroundColor="#0c0d0c" 
                     TextColor="White"
                     x:Name="addButton"
-                    Command="{Binding AddVehicleCommand}"/>
+                    Command="{Binding ViewAddCommand}"/>
 
 
                 <Button 
